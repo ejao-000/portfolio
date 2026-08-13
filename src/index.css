@@ -1,0 +1,215 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ------------------------------------------------------------------
+   Base canvas
+   A near-black base tinted faintly green, so every section sits on a
+   cohesive "black meets jungle" backdrop instead of flat black.
+------------------------------------------------------------------- */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Keep anchored sections clear of the sticky navbar when jumping to them */
+  section[id] {
+    scroll-margin-top: 4.5rem;
+  }
+
+  body {
+    @apply bg-carbon-950 text-white font-body antialiased;
+    background-color: #040706;
+  }
+
+  ::selection {
+    @apply bg-jungle-500 text-carbon-950;
+  }
+
+  /* Slim custom scrollbar in jungle tones */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #05080a;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #143c28;
+    border-radius: 999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #1b5237;
+  }
+}
+
+/* ------------------------------------------------------------------
+   Background treatment: black + jungle-green that melts together.
+   Layered fixed gradients (radial glows + a faint vignette) sit behind
+   everything; sections stay transparent so the blend shows through.
+------------------------------------------------------------------- */
+@layer utilities {
+  .bg-forest {
+    background-color: #040706;
+    background-image:
+      radial-gradient(52rem 42rem at 8% -6%, rgba(43, 168, 74, 0.22), transparent 55%),
+      radial-gradient(44rem 38rem at 108% 6%, rgba(27, 82, 55, 0.28), transparent 58%),
+      radial-gradient(60rem 60rem at 50% 118%, rgba(43, 168, 74, 0.12), transparent 60%),
+      radial-gradient(22rem 22rem at 88% 52%, rgba(43, 168, 74, 0.1), transparent 60%);
+  }
+
+  /* Subtle grid over the glow, very faint so it never fights content */
+  .grid-overlay {
+    background-image:
+      linear-gradient(rgba(43, 168, 74, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(43, 168, 74, 0.05) 1px, transparent 1px);
+    background-size: 56px 56px;
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 30%, black 30%, transparent 75%);
+    -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 30%, black 30%, transparent 75%);
+  }
+
+  /* Cards float on translucent black-green glass so the glow bleeds through */
+  .glass-card {
+    @apply bg-jungle-900/70 border border-jungle-700/40 backdrop-blur-sm;
+  }
+
+  /* Shared section shell */
+  .section-shell {
+    @apply max-w-6xl mx-auto px-6 md:px-10;
+  }
+
+  .text-gradient-jungle {
+    background: linear-gradient(100deg, #3fce5f 0%, #71e68c 45%, #a9f2ba 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .border-gradient {
+    position: relative;
+  }
+  .border-gradient::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, rgba(63, 206, 95, 0.55), rgba(20, 60, 40, 0.1) 55%, rgba(169, 242, 186, 0.35));
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  /* ---- Scroll reveal -------------------------------------------------
+     Elements start slightly translated + faded, then animate in once the
+     `is-visible` class is applied by the useReveal hook.                */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition:
+      opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+  }
+
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* When a wrapper gets .reveal-group.is-visible, cascade the animation to
+     every .reveal child so card grids reveal as one unit with a stagger. */
+  .reveal-group.is-visible .reveal {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Staggered children for card grids */
+  .reveal-delay-1 { transition-delay: 0.08s; }
+  .reveal-delay-2 { transition-delay: 0.16s; }
+  .reveal-delay-3 { transition-delay: 0.24s; }
+
+  /* ---- Horizontal page transition -----------------------------------
+     Each "page" (Home / About / Skills / Projects / Contact) slides in
+     horizontally when the user navigates — next enters from the right,
+     previous from the left.                                    */
+  .page-enter-right {
+    animation: pageSlideRight 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  .page-enter-left {
+    animation: pageSlideLeft 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  @keyframes pageSlideRight {
+    from {
+      opacity: 0;
+      transform: translateX(56px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes pageSlideLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-56px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .page-enter-right,
+    .page-enter-left {
+      animation: none;
+    }
+  }
+
+  /* Back-to-top button */
+  .scroll-top {
+    position: fixed;
+    right: 1.5rem;
+    bottom: 1.5rem;
+    z-index: 40;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.9rem;
+    height: 2.9rem;
+    border-radius: 999px;
+    background: rgba(10, 29, 20, 0.85);
+    border: 1px solid rgba(43, 168, 74, 0.45);
+    color: #3fce5f;
+    font-size: 1.1rem;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 0 24px -6px rgba(43, 168, 74, 0.5);
+    opacity: 0;
+    transform: translateY(12px);
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease, background 0.3s ease;
+  }
+
+  .scroll-top.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .scroll-top:hover {
+    background: rgba(27, 82, 55, 0.9);
+    color: #a9f2ba;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal,
+    .reveal.is-visible {
+      transition: none;
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
