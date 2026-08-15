@@ -64,7 +64,7 @@ export default function About({ onNavigate }) {
               } rounded-2xl p-6 transition-transform duration-300 hover:-translate-y-1`}
             >
               <h3 className="flex items-center gap-3 font-bold">
-                <span className="h-2 w-2 rounded-full bg-jungle-400 shadow-[0_0_8px_rgba(63,206,95,0.9)]" />
+                <span className="h-2 w-2 rounded-full bg-jungle-400 shadow-[0_0_8px_rgba(201,173,167,0.9)]" />
                 {item.title}
               </h3>
               <p className="mt-2 pl-5 text-sm text-gray-400">{item.detail}</p>

@@ -4,25 +4,25 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Deep, near-black jungle tones used as the base canvas
+        // Deep, near-black mauve tones used as the base canvas
         jungle: {
-          950: '#04100a',
-          900: '#07160f',
-          850: '#0a1d14',
-          800: '#0e2a1c',
-          700: '#143c28',
-          600: '#1b5237',
-          500: '#2ba84a',
-          400: '#3fce5f',
-          300: '#71e68c',
-          200: '#a9f2ba',
+          950: '#0d0a09',
+          900: '#140f0d',
+          850: '#1a1412',
+          800: '#241c19',
+          700: '#332623',
+          600: '#44322e',
+          500: '#C9ADA7',
+          400: '#d6c2bd',
+          300: '#e3d5d1',
+          200: '#F2E9E4',
         },
-        // Neutral blacks with a faint green cast
+        // Neutral warm blacks
         carbon: {
-          950: '#040706',
-          900: '#080d0a',
-          800: '#101712',
-          700: '#1a241d',
+          950: '#0a0807',
+          900: '#0f0c0b',
+          800: '#17120f',
+          700: '#221b17',
         },
       },
       fontFamily: {
@@ -30,11 +30,11 @@ export default {
         body: ['Inter', 'system-ui', 'sans-serif'],
       },
       boxShadow: {
-        'glow-green': '0 0 40px -8px rgba(43, 168, 74, 0.45)',
+        'glow-green': '0 0 40px -8px rgba(201, 173, 167, 0.45)',
         'card-green': '0 20px 50px -20px rgba(0, 0, 0, 0.8)',
       },
       backgroundImage: {
-        'radial-jungle': 'radial-gradient(circle at 50% 0%, rgba(43,168,74,0.16), transparent 55%)',
+        'radial-jungle': 'radial-gradient(circle at 50% 0%, rgba(201,173,167,0.16), transparent 55%)',
       },
       animation: {
         'float-slow': 'float 8s ease-in-out infinite',
@@ -58,9 +58,9 @@ export default {
           '50%': { transform: 'translateY(-14px)' },
         },
         pulseRing: {
-          '0%': { boxShadow: '0 0 0 0 rgba(43,168,74,0.35)' },
-          '70%': { boxShadow: '0 0 0 18px rgba(43,168,74,0)' },
-          '100%': { boxShadow: '0 0 0 0 rgba(43,168,74,0)' },
+          '0%': { boxShadow: '0 0 0 0 rgba(201,173,167,0.35)' },
+          '70%': { boxShadow: '0 0 0 18px rgba(201,173,167,0)' },
+          '100%': { boxShadow: '0 0 0 0 rgba(201,173,167,0)' },
         },
         alertFlash: {
           '0%, 100%': {

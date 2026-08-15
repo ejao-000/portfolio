@@ -4,8 +4,8 @@
 
 /* ------------------------------------------------------------------
    Base canvas
-   A near-black base tinted faintly green, so every section sits on a
-   cohesive "black meets jungle" backdrop instead of flat black.
+   A near-black base tinted faintly mauve, so every section sits on a
+   cohesive "black meets #C9ADA7" backdrop instead of flat black.
 ------------------------------------------------------------------- */
 @layer base {
   html {
@@ -19,55 +19,55 @@
 
   body {
     @apply bg-carbon-950 text-white font-body antialiased;
-    background-color: #040706;
+    background-color: #0a0807;
   }
 
   ::selection {
     @apply bg-jungle-500 text-carbon-950;
   }
 
-  /* Slim custom scrollbar in jungle tones */
+  /* Slim custom scrollbar in mauve tones */
   ::-webkit-scrollbar {
     width: 10px;
   }
   ::-webkit-scrollbar-track {
-    background: #05080a;
+    background: #0d0a09;
   }
   ::-webkit-scrollbar-thumb {
-    background: #143c28;
+    background: #44322e;
     border-radius: 999px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #1b5237;
+    background: #5a453f;
   }
 }
 
 /* ------------------------------------------------------------------
-   Background treatment: black + jungle-green that melts together.
+   Background treatment: black + mauve that melts together.
    Layered fixed gradients (radial glows + a faint vignette) sit behind
    everything; sections stay transparent so the blend shows through.
 ------------------------------------------------------------------- */
 @layer utilities {
   .bg-forest {
-    background-color: #040706;
+    background-color: #0a0807;
     background-image:
-      radial-gradient(52rem 42rem at 8% -6%, rgba(43, 168, 74, 0.22), transparent 55%),
-      radial-gradient(44rem 38rem at 108% 6%, rgba(27, 82, 55, 0.28), transparent 58%),
-      radial-gradient(60rem 60rem at 50% 118%, rgba(43, 168, 74, 0.12), transparent 60%),
-      radial-gradient(22rem 22rem at 88% 52%, rgba(43, 168, 74, 0.1), transparent 60%);
+      radial-gradient(52rem 42rem at 8% -6%, rgba(201, 173, 167, 0.22), transparent 55%),
+      radial-gradient(44rem 38rem at 108% 6%, rgba(68, 50, 46, 0.28), transparent 58%),
+      radial-gradient(60rem 60rem at 50% 118%, rgba(201, 173, 167, 0.12), transparent 60%),
+      radial-gradient(22rem 22rem at 88% 52%, rgba(201, 173, 167, 0.1), transparent 60%);
   }
 
   /* Subtle grid over the glow, very faint so it never fights content */
   .grid-overlay {
     background-image:
-      linear-gradient(rgba(43, 168, 74, 0.05) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(43, 168, 74, 0.05) 1px, transparent 1px);
+      linear-gradient(rgba(201, 173, 167, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(242, 233, 228, 0.06) 1px, transparent 1px);
     background-size: 56px 56px;
     mask-image: radial-gradient(ellipse 80% 60% at 50% 30%, black 30%, transparent 75%);
     -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 30%, black 30%, transparent 75%);
   }
 
-  /* Cards float on translucent black-green glass so the glow bleeds through */
+  /* Cards float on translucent black-mauve glass so the glow bleeds through */
   .glass-card {
     @apply bg-jungle-900/70 border border-jungle-700/40 backdrop-blur-sm;
   }
@@ -78,7 +78,7 @@
   }
 
   .text-gradient-jungle {
-    background: linear-gradient(100deg, #3fce5f 0%, #71e68c 45%, #a9f2ba 100%);
+    background: linear-gradient(100deg, #C9ADA7 0%, #d6c2bd 45%, #F2E9E4 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -93,7 +93,7 @@
     inset: 0;
     border-radius: inherit;
     padding: 1px;
-    background: linear-gradient(135deg, rgba(63, 206, 95, 0.55), rgba(20, 60, 40, 0.1) 55%, rgba(169, 242, 186, 0.35));
+    background: linear-gradient(135deg, rgba(201, 173, 167, 0.55), rgba(68, 50, 46, 0.1) 55%, rgba(242, 233, 228, 0.35));
     -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
@@ -176,10 +176,10 @@
     height: 0.7rem;
     width: 0.7rem;
     border-radius: 999px;
-    background: #71e68c;
+    background: #d6c2bd;
     box-shadow:
-      0 0 10px 2px rgba(63, 206, 95, 0.9),
-      0 0 24px 8px rgba(63, 206, 95, 0.45);
+      0 0 10px 2px rgba(201, 173, 167, 0.9),
+      0 0 24px 8px rgba(201, 173, 167, 0.45);
     animation: frameLight 7s linear infinite;
   }
 
@@ -218,12 +218,12 @@
     width: 2.9rem;
     height: 2.9rem;
     border-radius: 999px;
-    background: rgba(10, 29, 20, 0.85);
-    border: 1px solid rgba(43, 168, 74, 0.45);
-    color: #3fce5f;
+    background: rgba(26, 20, 18, 0.85);
+    border: 1px solid rgba(201, 173, 167, 0.45);
+    color: #C9ADA7;
     font-size: 1.1rem;
     backdrop-filter: blur(8px);
-    box-shadow: 0 0 24px -6px rgba(43, 168, 74, 0.5);
+    box-shadow: 0 0 24px -6px rgba(201, 173, 167, 0.5);
     opacity: 0;
     transform: translateY(12px);
     pointer-events: none;
@@ -237,8 +237,8 @@
   }
 
   .scroll-top:hover {
-    background: rgba(27, 82, 55, 0.9);
-    color: #a9f2ba;
+    background: rgba(68, 50, 46, 0.9);
+    color: #F2E9E4;
   }
 
   @media (prefers-reduced-motion: reduce) {
