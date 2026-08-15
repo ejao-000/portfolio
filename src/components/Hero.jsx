@@ -56,7 +56,7 @@ export default function Hero({ onNavigate }) {
               GitHub Profile
             </a>
             <a
-              href="https://linkedin.com/in/emmaculate-jane-akinyi-odhiambo"
+              href="https://www.linkedin.com/in/emmaculate-jane-akinyi-odhiambo-479215403/"
               target="_blank"
               rel="noreferrer"
               className="rounded-lg border border-carbon-700 px-6 py-3 text-sm font-semibold text-gray-300 transition-colors hover:border-jungle-500/60 hover:text-jungle-300"
