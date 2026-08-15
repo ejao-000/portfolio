@@ -20,6 +20,7 @@ const PROJECTS = [
       'Offline-first agricultural platform for areas with unreliable internet. Farmers record inventory and sales offline, queue crop-disease images, and sync automatically when connectivity returns, backed by Go services and AI/weather integrations.',
     tech: ['Go', 'PostgreSQL', 'Flutter', 'React', 'Weather API', 'SMS API'],
     links: {
+      preview: 'https://farmassist-frontend.onrender.com',
       repo: 'https://github.com/ejao-000/FarmAssist',
     },
   },
