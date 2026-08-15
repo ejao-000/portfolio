@@ -23,6 +23,16 @@ const PROJECTS = [
       repo: 'https://github.com/ejao-000/FarmAssist',
     },
   },
+  {
+    tag: 'AI-Powered Job Search Assistant',
+    title: 'SkillMatch',
+    description:
+      'AI-powered job search platform that helps users discover and manage job opportunities based on their skills, experience, resume, and career goals. Uses AI for personalized job recommendations and remembers user activity to improve future suggestions. Frontend built with React, Vite, and TypeScript, featuring a modern, responsive interface for user authentication, profile management, resume uploads, AI-powered chat, job discovery, personalized recommendations, saved jobs, and application tracking — communicating with a Go backend through REST APIs.',
+    tech: ['React', 'TypeScript', 'Vite', 'Go', 'CockroachDB', 'Amazon Bedrock', 'Amazon S3', 'JWT'],
+    links: {
+      repo: 'https://github.com/Ashomondi/Skill-match.git',
+    },
+  },
 ];
 
 /**

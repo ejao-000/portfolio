@@ -86,24 +86,27 @@ export default function Hero({ onNavigate }) {
           />
 
           {/* Photo frame */}
-          <div className="relative aspect-square overflow-hidden rounded-[1.75rem] border border-jungle-500/30 bg-jungle-900/60 shadow-card-green">
-            {photoFailed ? (
-              <img
-                src="/images/profile-placeholder.svg"
-                alt="Placeholder — add your photo at public/images/emmaakinyi.jpg"
-                className="animate-photo-breathe h-full w-full object-cover"
-              />
-            ) : (
-              <img
-                src="/images/emmaakinyi.jpg"
-                alt="Portrait of Odhiambo Emmaculate Jane Akinyi"
-                className="animate-photo-breathe h-full w-full object-cover"
-                onError={() => setPhotoFailed(true)}
-              />
-            )}
+          <div className="relative">
+            <div className="frame-light" aria-hidden />
+            <div className="relative aspect-square overflow-hidden rounded-[1.75rem] border border-jungle-500/30 bg-jungle-900/60 shadow-card-green">
+              {photoFailed ? (
+                <img
+                  src="/images/profile-placeholder.svg"
+                  alt="Placeholder — add your photo at public/images/emmaakinyi.jpg"
+                  className="animate-photo-breathe h-full w-full object-cover"
+                />
+              ) : (
+                <img
+                  src="/images/emmaakinyi.jpg"
+                  alt="Portrait of Odhiambo Emmaculate Jane Akinyi"
+                  className="animate-photo-breathe h-full w-full object-cover"
+                  onError={() => setPhotoFailed(true)}
+                />
+              )}
 
-            {/* Gradient at the bottom so the name chip reads clearly */}
-            <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-carbon-950/90 to-transparent" />
+              {/* Gradient at the bottom so the name chip reads clearly */}
+              <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-carbon-950/90 to-transparent" />
+            </div>
           </div>
 
           {/* Name chip pinned to the photo */}
