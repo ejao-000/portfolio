@@ -34,6 +34,16 @@ const PROJECTS = [
       repo: 'https://github.com/Ashomondi/Skill-match.git',
     },
   },
+  {
+    tag: 'Hackathon',
+    title: 'EcoRoute',
+    description:
+      'EcoRoute: Turning Waste Into a Resource. An end-to-end circular waste platform that tracks bin fill-levels live on an interactive map, with a Go-based route optimizer that cuts distance, fuel, and time on every run with no external dependencies. Residents report overflows and illegal dumping, which auto-escalate bins to critical with no admin needed. AI forecasts tomorrow\u2019s fill levels so trucks arrive before overflow \u2014 and if AI goes down, the dashboard never breaks. Real results: ~8 km saved per route and CO₂ avoided, computed from actual data.',
+    tech: ['Go', 'React', 'AI'],
+    links: {
+      repo: 'https://github.com/Ashomondi/EcoRoute.git',
+    },
+  },
 ];
 
 /**
@@ -74,16 +84,18 @@ export default function Services() {
             </p>
 
             {/* Tech stack */}
-            <ul className="mt-6 flex flex-wrap gap-2">
-              {project.tech.map((tech) => (
-                <li
-                  key={tech}
-                  className="rounded-md border border-carbon-700 bg-carbon-950/60 px-3 py-1 text-xs text-gray-300"
-                >
-                  {tech}
-                </li>
-              ))}
-            </ul>
+            {project.tech.length > 0 && (
+              <ul className="mt-6 flex flex-wrap gap-2">
+                {project.tech.map((tech) => (
+                  <li
+                    key={tech}
+                    className="rounded-md border border-carbon-700 bg-carbon-950/60 px-3 py-1 text-xs text-gray-300"
+                  >
+                    {tech}
+                  </li>
+                ))}
+              </ul>
+            )}
 
             {/* Links */}
             <div className="mt-6 flex items-center justify-between border-t border-carbon-700/70 pt-5 text-sm">
@@ -97,16 +109,18 @@ export default function Services() {
                   Live Preview <span aria-hidden>→</span>
                 </a>
               ) : (
-                <span className="text-gray-500">Offline-first architecture</span>
+                <span className="text-gray-500">Details on request</span>
               )}
-              <a
-                href={project.links.repo}
-                target="_blank"
-                rel="noreferrer"
-                className="text-gray-400 transition-colors hover:text-white"
-              >
-                GitHub Repo
-              </a>
+              {project.links.repo && (
+                <a
+                  href={project.links.repo}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-gray-400 transition-colors hover:text-white"
+                >
+                  GitHub Repo
+                </a>
+              )}
             </div>
           </article>
         ))}
