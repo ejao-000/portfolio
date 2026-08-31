@@ -9,7 +9,7 @@ const PROJECTS = [
       'Smart pre-paid electricity management platform featuring a real-time meter dashboard with kWh balance, usage trends, and depletion forecasts. Instant token vending via M-Pesa, Airtel Money, and bank transfers, with role-based portals for Tenants, Landlords, and Admins.',
     tech: ['Go', 'Gin', 'PostgreSQL', 'React', 'Tailwind', 'JWT', 'M-Pesa'],
     links: {
-      preview: 'https://powersmart-kenya.web.app/',
+      preview: 'https://powersmart-kenya-frontend.onrender.com',
       repo: 'https://github.com/ejao-000/powersmart-kenya',
     },
   },
