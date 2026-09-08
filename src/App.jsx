@@ -54,6 +54,14 @@ export default function App() {
 
       <Navbar active={active} onNavigate={navigate} />
 
+      {/* Fixed brand mark — bottom-left of the viewport on wide screens */}
+      <p
+        aria-hidden
+        className="pointer-events-none fixed bottom-5 left-6 z-20 hidden select-none font-display text-sm font-extrabold tracking-widest text-white/25 lg:block"
+      >
+        EJAO<span className="text-jungle-500/40">.DEV</span>
+      </p>
+
       {/* The active page, keyed so it remounts and replays the slide */}
       <main
         key={active}
