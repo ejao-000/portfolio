@@ -31,14 +31,14 @@ export default function Navbar({ active, onNavigate }) {
         </button>
 
         {/* Desktop links */}
-        <ul className="hidden items-center gap-8 text-sm text-gray-300 md:flex">
+        <ul className="hidden shrink-0 items-center gap-10 whitespace-nowrap text-sm text-gray-300 xl:gap-14 lg:flex">
           {NAV_LINKS.map((link) => (
             <li key={link.id}>
               <button
                 type="button"
                 onClick={() => onNavigate(link.id)}
                 aria-current={active === link.id ? 'page' : undefined}
-                className={`relative py-1 transition-colors hover:text-jungle-400 ${
+                className={`relative whitespace-nowrap py-1 transition-colors hover:text-jungle-400 ${
                   active === link.id ? 'font-semibold text-jungle-400' : ''
                 }`}
               >
@@ -58,7 +58,7 @@ export default function Navbar({ active, onNavigate }) {
         {/* CTA */}
         <a
           href="mailto:odhiamboemmaculatejaneakinyi@gmail.com"
-          className="hidden rounded-lg bg-jungle-500 px-5 py-2 text-sm font-bold text-carbon-950 shadow-glow-green transition-all hover:bg-jungle-400 md:block"
+          className="hidden shrink-0 rounded-lg bg-jungle-500 px-5 py-2 text-sm font-bold text-carbon-950 shadow-glow-green transition-all hover:bg-jungle-400 lg:block"
         >
           Get in Touch
         </a>
@@ -69,7 +69,7 @@ export default function Navbar({ active, onNavigate }) {
           aria-label="Toggle navigation menu"
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
-          className="rounded-md border border-carbon-700 px-3 py-2 text-gray-300 md:hidden"
+          className="rounded-md border border-carbon-700 px-3 py-2 text-gray-300 lg:hidden"
         >
           {open ? '✕' : '☰'}
         </button>
@@ -77,7 +77,7 @@ export default function Navbar({ active, onNavigate }) {
 
       {/* Mobile menu */}
       {open && (
-        <ul className="section-shell flex flex-col gap-4 border-t border-carbon-700 py-5 text-sm text-gray-300 md:hidden">
+        <ul className="section-shell flex flex-col gap-4 border-t border-carbon-700 py-5 text-sm text-gray-300 lg:hidden">
           {NAV_LINKS.map((link) => (
             <li key={link.id}>
               <button
