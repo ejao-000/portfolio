@@ -113,21 +113,6 @@ export default function Hero({ onNavigate }) {
           <div className="absolute -bottom-5 left-1/2 w-max -translate-x-1/2 rounded-full border border-jungle-500/40 bg-carbon-900/90 px-5 py-2 text-xs font-bold tracking-wide text-jungle-300 backdrop-blur">
             EMMACULATE JANE · KISUMU, KE
           </div>
-
-          {/* Floating card: core stack */}
-          <div className="absolute -left-8 top-6 hidden animate-slide-right rounded-2xl border border-jungle-500/50 bg-jungle-700 p-4 shadow-card-green sm:block">
-            <p className="text-lg font-extrabold text-white">Go &amp; React</p>
-            <p className="mt-0.5 text-xs text-jungle-200">Core stack, production experience</p>
-          </div>
-
-          {/* Floating card: status */}
-          <div
-            className="absolute -right-8 bottom-16 hidden animate-slide-right rounded-2xl border border-jungle-500/50 bg-jungle-700 p-4 shadow-card-green sm:block"
-            style={{ animationDelay: '3s' }}
-          >
-            <p className="text-lg font-extrabold text-white">Zone 01</p>
-            <p className="mt-0.5 text-xs text-jungle-200">Software engineering apprentice</p>
-          </div>
         </div>
       </div>
     </section>
