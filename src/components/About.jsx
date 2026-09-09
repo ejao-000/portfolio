@@ -34,15 +34,21 @@ export default function About({ onNavigate }) {
             A developer who cares about code that actually works
           </h2>
           <p className="mt-5 leading-relaxed text-gray-400">
-            I'm Emmaculate Jane Akinyi, a full-stack developer based in Kisumu,
-            Kenya. My work sits where dependable backend engineering meets
-            thoughtful, usable interfaces — mostly in Go and React.
+            I am a Kenya-based software engineer, Zone01 Kisumu cohort member,
+            and holder of a Diploma in Computer Science. As a versatile
+            full-stack developer, I specialize in building robust, decentralized
+            backend systems using Go and Python, alongside crafting responsive,
+            user-centric frontend interfaces with HTML, CSS, and JavaScript.
           </p>
           <p className="mt-4 leading-relaxed text-gray-400">
-            I'm currently deepening my craft through rigorous peer-to-peer
-            training at Zone 01 Kisumu, and I love solving problems that matter
-            locally: smart energy management, agriculture, and tools for people
-            with unreliable internet.
+            Passionate about continuous learning and problem-solving, I
+            regularly test my skills and collaborate with diverse tech talent
+            through hackathons. Building upon my strong foundation in full-stack
+            engineering, I am currently expanding my expertise toward Artificial
+            Intelligence, with a keen focus on integrating intelligent systems
+            and specializing in AI-driven solutions. I thrive in dynamic
+            environments and am always eager to connect with industry peers and
+            explore new opportunities.
           </p>
 
           <button
