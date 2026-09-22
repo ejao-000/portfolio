@@ -10,7 +10,8 @@ const HIGHLIGHTS = [
  * About
  * -----
  * Personal introduction section — who she is, what she focuses on, and a
- * few standout strengths. Kept brief so it reads like a real bio.
+ * few standout strengths. Left column carries the bio, right column is a
+ * stacked bento grid of strengths.
  *
  * `onNavigate` lets the CTA jump to the Contact page.
  */
@@ -21,19 +22,19 @@ export default function About({ onNavigate }) {
     <section id="about" className="section-shell py-16 md:py-24">
       <div
         ref={ref}
-        className={`reveal reveal-group grid items-start gap-12 lg:grid-cols-[0.9fr_1.1fr] ${
+        className={`reveal reveal-group grid items-start gap-12 lg:grid-cols-2 ${
           visible ? 'is-visible' : ''
         }`}
       >
         {/* Intro copy */}
-        <div>
-          <span className="text-xs font-semibold uppercase tracking-[0.28em] text-jungle-400">
+        <div className="flex h-full flex-col">
+          <span className="text-xs font-semibold uppercase tracking-[0.28em] text-gray-400">
             About me
           </span>
-          <h2 className="mt-3 font-display text-3xl font-extrabold md:text-4xl">
+          <h2 className="mt-4 font-display text-4xl font-extrabold leading-[1.1] tracking-tight text-white md:text-5xl">
             A developer who cares about code that actually works
           </h2>
-          <p className="mt-5 leading-relaxed text-gray-400">
+          <p className="mt-6 leading-relaxed text-gray-400">
             I am a Kenya-based software engineer, Zone01 Kisumu cohort member,
             and holder of a Diploma in Computer Science. As a versatile
             full-stack developer, I specialize in building robust, decentralized
@@ -51,26 +52,28 @@ export default function About({ onNavigate }) {
             explore new opportunities.
           </p>
 
-          <button
-            type="button"
-            onClick={() => onNavigate('contact')}
-            className="mt-8 inline-flex items-center gap-2 rounded-lg border border-jungle-500/50 px-6 py-3 text-sm font-semibold text-jungle-300 transition-all hover:-translate-y-0.5 hover:bg-jungle-500/10"
-          >
-            Let's work together <span aria-hidden>→</span>
-          </button>
+          <div className="mt-auto pt-8">
+            <button
+              type="button"
+              onClick={() => onNavigate('contact')}
+              className="inline-flex items-center gap-2 rounded-lg border border-white/15 px-6 py-3 text-sm font-semibold text-gray-300 transition-all duration-300 hover:-translate-y-0.5 hover:border-neon-500/60 hover:text-neon-400"
+            >
+              Let's work together <span aria-hidden>→</span>
+            </button>
+          </div>
         </div>
 
-        {/* Strength highlights */}
+        {/* Strength bento stack */}
         <div className="space-y-4">
           {HIGHLIGHTS.map((item, index) => (
             <div
               key={item.title}
-              className={`glass-card border-gradient reveal reveal-delay-${
+              className={`reveal reveal-delay-${
                 index + 1
-              } rounded-2xl p-6 transition-transform duration-300 hover:-translate-y-1`}
+              } rounded-xl border border-white/5 bg-white/[0.03] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-neon-500/40 hover:bg-white/[0.05]`}
             >
-              <h3 className="flex items-center gap-3 font-bold">
-                <span className="h-2 w-2 rounded-full bg-jungle-400 shadow-[0_0_8px_rgba(178,139,159,0.9)]" />
+              <h3 className="flex items-center gap-3 font-bold text-white">
+                <span className="h-2 w-2 rounded-full bg-neon-500 shadow-[0_0_10px_rgba(224,64,251,0.9)]" />
                 {item.title}
               </h3>
               <p className="mt-2 pl-5 text-sm text-gray-400">{item.detail}</p>

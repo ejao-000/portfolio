@@ -4,18 +4,18 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Deep, near-black plum tones used as the base canvas
+        // Deep neutral charcoal tones used as the base canvas
         jungle: {
-          950: '#171117',
-          900: '#201920',
-          850: '#262027',
-          800: '#2D252C',
-          700: '#3C2F38',
-          600: '#8C5E76',
-          500: '#B28B9F',
-          400: '#C9A7B8',
-          300: '#DDC9D6',
-          200: '#F1E8EF',
+          950: '#121214',
+          900: '#17171A',
+          850: '#1B1B1F',
+          800: '#202024',
+          700: '#2A2A30',
+          600: '#A020C0',
+          500: '#E040FB',
+          400: '#EA6BFF',
+          300: '#F0A6FF',
+          200: '#FBE8FF',
         },
         // Neutral plum-blacks
         carbon: {
@@ -24,17 +24,23 @@ export default {
           800: '#241C22',
           700: '#2D252C',
         },
+        // Vibrant neon magenta accent
+        neon: {
+          400: '#EA6BFF',
+          500: '#E040FB',
+          600: '#C026D3',
+        },
       },
       fontFamily: {
         display: ['Sora', 'Inter', 'system-ui', 'sans-serif'],
         body: ['Inter', 'system-ui', 'sans-serif'],
       },
       boxShadow: {
-        'glow-green': '0 0 40px -8px rgba(178, 139, 159, 0.45)',
+        'glow-green': '0 0 40px -8px rgba(224, 64, 251, 0.45)',
         'card-green': '0 20px 50px -20px rgba(0, 0, 0, 0.8)',
       },
       backgroundImage: {
-        'radial-jungle': 'radial-gradient(circle at 50% 0%, rgba(178,139,159,0.16), transparent 55%)',
+        'radial-jungle': 'radial-gradient(circle at 50% 0%, rgba(224,64,251,0.16), transparent 55%)',
       },
       animation: {
         'float-slow': 'float 8s ease-in-out infinite',

@@ -38,7 +38,7 @@ export default function Solutions() {
             {/* Education timeline */}
             <ul className="mt-8 space-y-5 text-left">
               <li className="flex gap-4">
-                <span className="mt-1.5 h-2.5 w-2.5 shrink-0 rounded-full bg-jungle-400 shadow-[0_0_10px_rgba(178,139,159,0.9)]" />
+                <span className="mt-1.5 h-2.5 w-2.5 shrink-0 rounded-full bg-jungle-400 shadow-[0_0_10px_rgba(224,64,251,0.9)]" />
                 <div>
                   <p className="text-sm font-semibold">Zone 01 Kisumu — Software Engineering</p>
                   <p className="text-xs text-gray-500">Current · Peer-to-peer, project-based training</p>
