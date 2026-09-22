@@ -206,6 +206,29 @@
     }
   }
 
+  /* Blinking caret that trails the hero typewriter */
+  .typewriter-cursor {
+    display: inline-block;
+    width: 3px;
+    height: 1em;
+    margin-left: 0.08em;
+    vertical-align: -0.12em;
+    background: #C9A7B8;
+    box-shadow: 0 0 10px rgba(178, 139, 159, 0.85);
+    animation: typewriterBlink 1s steps(1, end) infinite;
+  }
+
+  @keyframes typewriterBlink {
+    0%,
+    50% {
+      opacity: 1;
+    }
+    50.01%,
+    100% {
+      opacity: 0;
+    }
+  }
+
   /* Back-to-top button */
   .scroll-top {
     position: fixed;

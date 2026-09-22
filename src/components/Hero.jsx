@@ -1,5 +1,14 @@
 import { useState } from 'react';
 import useReveal from '../hooks/useReveal';
+import useTypewriter from '../hooks/useTypewriter';
+
+const HERO_PHRASES = [
+  'Building Scalable Backends.',
+  'Engineering Intelligent Systems.',
+  'Architecting High-Performance Backends & AI-Driven Solutions',
+  'From Robust Decentralized Architectures to Smart AI Integrations',
+  'Designing Resilient Systems from the Core Backend to the User Interface',
+];
 
 /**
  * Hero
@@ -19,22 +28,26 @@ export default function Hero({ onNavigate }) {
   const [photoFailed, setPhotoFailed] = useState(false);
   const intro = useReveal();
   const photo = useReveal();
+  const typed = useTypewriter(HERO_PHRASES, { holdTime: 20000 });
 
   return (
     <section id="home" className="relative">
       <div className="section-shell grid items-center gap-14 py-20 md:py-28 lg:grid-cols-[1.15fr_0.85fr]">
         {/* ----- Intro copy ----- */}
         <div ref={intro.ref} className={`reveal ${intro.visible ? 'is-visible' : ''}`}>
-          <h1 className="font-display text-4xl font-extrabold leading-[1.1] tracking-tight md:text-6xl">
-            Building scalable{' '}
-            <span className="text-gradient-jungle">software solutions</span>{' '}
-            with Go &amp; React
+          <span className="text-xs font-semibold uppercase tracking-[0.28em] text-jungle-400">
+            Engineering the Future of Decentralized &amp; Intelligent Systems
+          </span>
+
+          <h1 className="mt-3 flex min-h-[4.4em] items-start font-display text-3xl font-extrabold leading-[1.1] tracking-tight md:min-h-[3.3em] md:text-5xl">
+            <span className="text-gradient-jungle">{typed}</span>
+            <span className="typewriter-cursor" aria-hidden />
           </h1>
 
           <p className="mt-6 max-w-xl text-base leading-relaxed text-gray-400 md:text-lg">
-            Hi, I'm <span className="text-white">Odhiambo Emmaculate Jane Akinyi</span> —
-            a full-stack developer from Kisumu, Kenya crafting real-time dashboards,
-            offline-first architectures, and dependable backend services.
+            Hi, I'm a Kenya-based Software Engineer specializing in robust
+            backend architectures, responsive user interfaces, and the next
+            frontier of AI-driven solutions.
           </p>
 
           {/* Call to action */}
