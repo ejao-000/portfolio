@@ -32,7 +32,7 @@ export default {
         },
       },
       fontFamily: {
-        display: ['Sora', 'Inter', 'system-ui', 'sans-serif'],
+        display: ['Plus Jakarta Sans', 'Sora', 'Inter', 'system-ui', 'sans-serif'],
         body: ['Inter', 'system-ui', 'sans-serif'],
       },
       boxShadow: {

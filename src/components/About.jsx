@@ -1,9 +1,18 @@
 import useReveal from '../hooks/useReveal';
 
 const HIGHLIGHTS = [
-  { title: 'Real-time systems', detail: 'Live meter dashboards and event-driven backends in Go.' },
-  { title: 'Offline-first design', detail: 'Apps that keep working without connectivity and sync later.' },
-  { title: 'End-to-end delivery', detail: 'From database schema to polished React interfaces.' },
+  {
+    title: 'Decentralized Backends',
+    detail: 'Building robust, autonomous backend architectures using Go and Python.',
+  },
+  {
+    title: 'Responsive Interfaces',
+    detail: 'Crafting highly responsive, user-centric frontends with HTML, CSS, and JavaScript.',
+  },
+  {
+    title: 'AI Integration',
+    detail: 'Expanding full-stack foundations to implement smart capabilities and AI-driven solutions.',
+  },
 ];
 
 /**
@@ -22,7 +31,7 @@ export default function About({ onNavigate }) {
     <section id="about" className="section-shell py-16 md:py-24">
       <div
         ref={ref}
-        className={`reveal reveal-group grid items-start gap-12 lg:grid-cols-2 ${
+        className={`reveal reveal-group grid items-start gap-12 lg:grid-cols-[3fr_2fr] ${
           visible ? 'is-visible' : ''
         }`}
       >

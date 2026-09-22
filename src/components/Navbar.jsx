@@ -58,7 +58,7 @@ export default function Navbar({ active, onNavigate }) {
         {/* CTA */}
         <a
           href="mailto:odhiamboemmaculatejaneakinyi@gmail.com"
-          className="hidden shrink-0 rounded-lg border border-neon-500/70 px-5 py-2 text-sm font-semibold text-white transition-all duration-300 hover:bg-neon-500/10 hover:shadow-[0_0_20px_-4px_rgba(224,64,251,0.6)] lg:block"
+          className="hidden shrink-0 rounded-full border border-neon-500/70 px-5 py-2 text-sm font-semibold text-white transition-all duration-300 hover:bg-neon-500/10 hover:shadow-[0_0_20px_-4px_rgba(224,64,251,0.6)] lg:block"
         >
           Get in Touch
         </a>
@@ -97,7 +97,7 @@ export default function Navbar({ active, onNavigate }) {
           <li>
             <a
               href="mailto:odhiamboemmaculatejaneakinyi@gmail.com"
-              className="inline-block rounded-lg border border-neon-500/70 px-5 py-2 text-sm font-semibold text-white"
+              className="inline-block rounded-full border border-neon-500/70 px-5 py-2 text-sm font-semibold text-white"
             >
               Get in Touch
             </a>
