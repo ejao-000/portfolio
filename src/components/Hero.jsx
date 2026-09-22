@@ -28,7 +28,7 @@ export default function Hero({ onNavigate }) {
   const [photoFailed, setPhotoFailed] = useState(false);
   const intro = useReveal();
   const photo = useReveal();
-  const typed = useTypewriter(HERO_PHRASES, { holdTime: 20000 });
+  const typed = useTypewriter(HERO_PHRASES, { holdTime: 5000 });
 
   return (
     <section id="home" className="relative">
