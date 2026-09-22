@@ -155,6 +155,31 @@
     transform: translateY(0);
   }
 
+  /* Alternate horizontal reveals for stacked project cards. Cards enter
+     from the right or left depending on scroll position. */
+  .reveal-left,
+  .reveal-right {
+    opacity: 0;
+    transition:
+      opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+  }
+
+  .reveal-left {
+    transform: translateX(-72px);
+  }
+
+  .reveal-right {
+    transform: translateX(72px);
+  }
+
+  .reveal-left.is-visible,
+  .reveal-right.is-visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
   /* When a wrapper gets .reveal-group.is-visible, cascade the animation to
      every .reveal child so card grids reveal as one unit with a stagger. */
   .reveal-group.is-visible .reveal {
@@ -304,7 +329,11 @@
 
   @media (prefers-reduced-motion: reduce) {
     .reveal,
-    .reveal.is-visible {
+    .reveal.is-visible,
+    .reveal-left,
+    .reveal-right,
+    .reveal-left.is-visible,
+    .reveal-right.is-visible {
       transition: none;
       opacity: 1;
       transform: none;

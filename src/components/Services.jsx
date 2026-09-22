@@ -52,9 +52,67 @@ const PROJECTS = [
  * Featured projects, each rendered from the PROJECTS data above. Keeping the
  * data separate keeps the JSX readable.
  */
-export default function Services() {
+function ProjectCard({ project, direction }) {
   const { ref, visible } = useReveal();
 
+  return (
+    <article
+      ref={ref}
+      className={`glass-card border-gradient card-shine ${
+        direction === 'left' ? 'reveal-left' : 'reveal-right'
+      } ${visible ? 'is-visible' : ''} flex flex-col rounded-3xl p-8 transition-transform duration-300 hover:-translate-y-1.5`}
+    >
+      {/* Tag */}
+      <span className="text-xs font-semibold text-jungle-400">{project.tag}</span>
+      <h3 className="mt-2 font-display text-2xl font-bold">{project.title}</h3>
+      <p className="mt-4 flex-1 text-sm leading-relaxed text-gray-400">
+        {project.description}
+      </p>
+
+      {/* Tech stack */}
+      {project.tech.length > 0 && (
+        <ul className="mt-6 flex flex-wrap gap-2">
+          {project.tech.map((tech) => (
+            <li
+              key={tech}
+              className="rounded-md border border-carbon-700 bg-carbon-950/60 px-3 py-1 text-xs text-gray-300"
+            >
+              {tech}
+            </li>
+          ))}
+        </ul>
+      )}
+
+      {/* Links */}
+      <div className="mt-6 flex items-center justify-between border-t border-carbon-700/70 pt-5 text-sm">
+        {project.links.preview ? (
+          <a
+            href={project.links.preview}
+            target="_blank"
+            rel="noreferrer"
+            className="font-semibold text-jungle-400 transition-colors hover:text-jungle-300"
+          >
+            Live Preview <span aria-hidden>→</span>
+          </a>
+        ) : (
+          <span className="text-gray-500">Details on request</span>
+        )}
+        {project.links.repo && (
+          <a
+            href={project.links.repo}
+            target="_blank"
+            rel="noreferrer"
+            className="text-gray-400 transition-colors hover:text-white"
+          >
+            GitHub Repo
+          </a>
+        )}
+      </div>
+    </article>
+  );
+}
+
+export default function Services() {
   return (
     <section id="projects" className="section-shell py-16 md:py-24">
       <SectionHeading
@@ -63,66 +121,13 @@ export default function Services() {
         subtitle="Real-world applications tackling localized power management and agricultural data challenges."
       />
 
-      <div
-        ref={ref}
-        className={`reveal-group mt-12 flex flex-col gap-6 ${
-          visible ? 'is-visible' : ''
-        }`}
-      >
+      <div className="mt-12 flex flex-col gap-6">
         {PROJECTS.map((project, index) => (
-          <article
+          <ProjectCard
             key={project.title}
-            className={`glass-card border-gradient card-shine reveal reveal-delay-${
-              index + 1
-            } flex flex-col rounded-3xl p-8 transition-transform duration-300 hover:-translate-y-1.5`}
-          >
-            {/* Tag */}
-            <span className="text-xs font-semibold text-jungle-400">{project.tag}</span>
-            <h3 className="mt-2 font-display text-2xl font-bold">{project.title}</h3>
-            <p className="mt-4 flex-1 text-sm leading-relaxed text-gray-400">
-              {project.description}
-            </p>
-
-            {/* Tech stack */}
-            {project.tech.length > 0 && (
-              <ul className="mt-6 flex flex-wrap gap-2">
-                {project.tech.map((tech) => (
-                  <li
-                    key={tech}
-                    className="rounded-md border border-carbon-700 bg-carbon-950/60 px-3 py-1 text-xs text-gray-300"
-                  >
-                    {tech}
-                  </li>
-                ))}
-              </ul>
-            )}
-
-            {/* Links */}
-            <div className="mt-6 flex items-center justify-between border-t border-carbon-700/70 pt-5 text-sm">
-              {project.links.preview ? (
-                <a
-                  href={project.links.preview}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="font-semibold text-jungle-400 transition-colors hover:text-jungle-300"
-                >
-                  Live Preview <span aria-hidden>→</span>
-                </a>
-              ) : (
-                <span className="text-gray-500">Details on request</span>
-              )}
-              {project.links.repo && (
-                <a
-                  href={project.links.repo}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-gray-400 transition-colors hover:text-white"
-                >
-                  GitHub Repo
-                </a>
-              )}
-            </div>
-          </article>
+            project={project}
+            direction={index % 2 === 0 ? 'right' : 'left'}
+          />
         ))}
       </div>
     </section>
