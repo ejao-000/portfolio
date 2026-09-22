@@ -35,11 +35,7 @@ export default function Hero({ onNavigate }) {
       <div className="section-shell grid items-center gap-14 py-20 md:py-28 lg:grid-cols-[1.15fr_0.85fr]">
         {/* ----- Intro copy ----- */}
         <div ref={intro.ref} className={`reveal ${intro.visible ? 'is-visible' : ''}`}>
-          <span className="text-xs font-semibold uppercase tracking-[0.28em] text-jungle-400">
-            Engineering the Future of Decentralized &amp; Intelligent Systems
-          </span>
-
-          <h1 className="mt-3 flex min-h-[4.4em] items-start font-display text-3xl font-extrabold leading-[1.1] tracking-tight md:min-h-[3.3em] md:text-5xl">
+          <h1 className="flex min-h-[4.4em] items-start font-display text-3xl font-extrabold leading-[1.1] tracking-tight md:min-h-[3.3em] md:text-5xl">
             <span className="text-gradient-jungle">{typed}</span>
             <span className="typewriter-cursor" aria-hidden />
           </h1>
