@@ -10,6 +10,7 @@ import Solutions from './components/Solutions';
 import Support from './components/Support';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
+import WhatsAppButton from './components/WhatsAppButton';
 
 /**
  * App
@@ -71,6 +72,7 @@ export default function App() {
       </main>
 
       <Footer />
+      <WhatsAppButton />
       <ScrollToTop />
     </div>
   );
