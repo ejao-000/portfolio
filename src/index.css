@@ -231,27 +231,35 @@
     }
   }
 
-  /* ---- Travelling frame light --------------------------------------
-     A magenta glow that orbits the profile-photo frame border.        */
+  /* ---- Travelling frame lights -------------------------------------
+     Three magenta glows orbiting the profile-photo frame border.      */
   .frame-light {
     position: absolute;
-    height: 0.7rem;
-    width: 0.7rem;
+    height: 1rem;
+    width: 1rem;
     border-radius: 999px;
     background: #EA6BFF;
     box-shadow:
-      0 0 10px 2px rgba(224, 64, 251, 0.9),
-      0 0 24px 8px rgba(224, 64, 251, 0.45);
+      0 0 14px 3px rgba(224, 64, 251, 0.9),
+      0 0 34px 12px rgba(224, 64, 251, 0.45);
     animation: frameLight 7s linear infinite;
+  }
+
+  .frame-light-2 {
+    animation-delay: -2.33s;
+  }
+
+  .frame-light-3 {
+    animation-delay: -4.67s;
   }
 
   @keyframes frameLight {
     0% {
-      top: -3px;
-      left: -3px;
+      top: -8px;
+      left: -8px;
     }
     25% {
-      top: -3px;
+      top: -8px;
       left: calc(100% - 8px);
     }
     50% {
@@ -260,11 +268,11 @@
     }
     75% {
       top: calc(100% - 8px);
-      left: -3px;
+      left: -8px;
     }
     100% {
-      top: -3px;
-      left: -3px;
+      top: -8px;
+      left: -8px;
     }
   }
 

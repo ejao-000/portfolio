@@ -97,6 +97,8 @@ export default function Hero({ onNavigate }) {
           {/* Photo frame */}
           <div className="relative">
             <div className="frame-light" aria-hidden />
+            <div className="frame-light frame-light-2" aria-hidden />
+            <div className="frame-light frame-light-3" aria-hidden />
             <div className="relative aspect-square overflow-hidden rounded-[1.75rem] border border-jungle-500/30 bg-jungle-900/60 shadow-card-green">
               {photoFailed ? (
                 <img
