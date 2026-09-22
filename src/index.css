@@ -100,6 +100,44 @@
     pointer-events: none;
   }
 
+  /* Light reflection that sweeps across a card on hover */
+  .card-shine {
+    position: relative;
+    overflow: hidden;
+  }
+  .card-shine::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -80%;
+    width: 55%;
+    height: 100%;
+    background: linear-gradient(
+      100deg,
+      transparent 0%,
+      rgba(241, 232, 239, 0.05) 40%,
+      rgba(241, 232, 239, 0.22) 50%,
+      rgba(241, 232, 239, 0.05) 60%,
+      transparent 100%
+    );
+    transform: skewX(-20deg);
+    opacity: 0;
+    pointer-events: none;
+  }
+  .card-shine:hover::after {
+    opacity: 1;
+    animation: cardShine 0.9s ease forwards;
+  }
+
+  @keyframes cardShine {
+    from {
+      left: -80%;
+    }
+    to {
+      left: 130%;
+    }
+  }
+
   /* ---- Scroll reveal -------------------------------------------------
      Elements start slightly translated + faded, then animate in once the
      `is-visible` class is applied by the useReveal hook.                */

@@ -65,14 +65,14 @@ export default function Services() {
 
       <div
         ref={ref}
-        className={`reveal-group mt-12 grid gap-6 lg:grid-cols-2 ${
+        className={`reveal-group mt-12 flex flex-col gap-6 ${
           visible ? 'is-visible' : ''
         }`}
       >
         {PROJECTS.map((project, index) => (
           <article
             key={project.title}
-            className={`glass-card border-gradient reveal reveal-delay-${
+            className={`glass-card border-gradient card-shine reveal reveal-delay-${
               index + 1
             } flex flex-col rounded-3xl p-8 transition-transform duration-300 hover:-translate-y-1.5`}
           >
