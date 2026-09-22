@@ -246,11 +246,15 @@
   }
 
   .frame-light-2 {
-    animation-delay: -2.33s;
+    animation-delay: -1.75s;
   }
 
   .frame-light-3 {
-    animation-delay: -4.67s;
+    animation-delay: -3.5s;
+  }
+
+  .frame-light-4 {
+    animation-delay: -5.25s;
   }
 
   @keyframes frameLight {
