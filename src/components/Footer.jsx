@@ -11,11 +11,13 @@ const SOCIAL_LINKS = [
  */
 export default function Footer() {
   return (
-    <footer className="border-t border-jungle-700/25 bg-carbon-900/80 py-8">
-      <div className="section-shell flex flex-col items-center justify-between gap-4 text-sm text-gray-500 md:flex-row">
-        <p>
-          <span className="font-bold tracking-wider text-white">ODHIAMBO EMMACULATE JANE AKINYI</span>
-          {' '}— Kisumu, Kenya
+    <footer className="border-t border-white/[0.06] bg-black/40 py-8">
+      <div className="section-shell flex flex-col items-center justify-between gap-5 text-xs text-gray-500 md:flex-row">
+        <p className="tracking-wide">
+          <span className="font-semibold text-gray-300">
+            ODHIAMBO EMMACULATE JANE AKINYI
+          </span>
+          <span className="text-gray-600"> — Kisumu, Kenya</span>
         </p>
 
         <ul className="flex gap-6">
@@ -25,7 +27,7 @@ export default function Footer() {
                 href={social.href}
                 target="_blank"
                 rel="noreferrer"
-                className="transition-colors hover:text-jungle-400"
+                className="transition-colors duration-300 hover:text-neon-400"
               >
                 {social.label}
               </a>

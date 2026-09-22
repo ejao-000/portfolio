@@ -19,7 +19,7 @@
 
   body {
     @apply bg-carbon-950 text-white font-body antialiased;
-    background-color: #121214;
+    background-color: #0B0B0C;
   }
 
   ::selection {
@@ -49,11 +49,11 @@
 ------------------------------------------------------------------- */
 @layer utilities {
   .bg-forest {
-    background-color: #121214;
+    background-color: #0B0B0C;
     background-image:
-      radial-gradient(52rem 44rem at 108% 116%, rgba(224, 64, 251, 0.22), transparent 62%),
-      radial-gradient(40rem 36rem at 96% 104%, rgba(140, 40, 170, 0.18), transparent 60%),
-      radial-gradient(52rem 42rem at 6% -8%, rgba(224, 64, 251, 0.12), transparent 55%);
+      radial-gradient(52rem 44rem at 108% 116%, rgba(224, 64, 251, 0.24), transparent 62%),
+      radial-gradient(40rem 36rem at 96% 104%, rgba(140, 40, 170, 0.2), transparent 60%),
+      radial-gradient(52rem 42rem at 6% -8%, rgba(224, 64, 251, 0.1), transparent 55%);
   }
 
   /* Subtle grid over the glow, very faint so it never fights content */
