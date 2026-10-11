@@ -5,19 +5,40 @@ const PROJECTS = [
   {
     tag: 'Live production app',
     title: 'Powersmart-Kenya',
-    description:
-      'Smart pre-paid electricity management platform featuring a real-time meter dashboard with kWh balance, usage trends, and depletion forecasts. Instant token vending via M-Pesa, Airtel Money, and bank transfers, with role-based portals for Tenants, Landlords, and Admins.',
-    tech: ['Go', 'Gin', 'PostgreSQL', 'React', 'Tailwind', 'JWT', 'M-Pesa'],
+    bullets: [
+      'Full-stack prepaid electricity platform pairing a Go/Gin + PostgreSQL backend with a React + Tailwind frontend for real-time kWh balance, usage trends, and depletion forecasts.',
+      'Designed REST APIs and a transactional PostgreSQL schema for instant token vending via M-Pesa, Airtel Money, and bank transfers, with end-to-end transaction tracking.',
+      'Built role-based portals and an admin console for Tenants, Landlords, and Admins, wiring frontend state to backend APIs.',
+      'Secured the stack end-to-end with bcrypt password hashing, JWT auth, rate limiting, and input validation.',
+    ],
+    tech: ['Go', 'Gin', 'PostgreSQL', 'React', 'Tailwind', 'JWT', 'M-Pesa', 'Docker'],
     links: {
       preview: 'https://powersmart-kenya-frontend.onrender.com',
       repo: 'https://github.com/ejao-000/powersmart-kenya',
     },
   },
   {
+    tag: 'AI-Powered Job Search Assistant',
+    title: 'SkillMatch',
+    bullets: [
+      'AI-powered job search platform connecting a React, TypeScript, and Vite frontend to a Go backend through REST APIs, giving users a single dashboard for their entire job-search journey.',
+      'Integrated Amazon Bedrock for personalized recommendations and AI chat, Amazon S3 for resume storage, and CockroachDB for persistence.',
+      'Built a responsive interface covering authentication, profile management, resume uploads, job discovery, saved jobs, and application tracking.',
+      'Implemented JWT-based authentication and consumed backend APIs for recommendations that adapt to user activity.',
+    ],
+    tech: ['React', 'TypeScript', 'Vite', 'Go', 'CockroachDB', 'Amazon Bedrock', 'Amazon S3', 'JWT'],
+    links: {
+      repo: 'https://github.com/Ashomondi/Skill-match.git',
+    },
+  },
+  {
     tag: 'Agricultural tech',
     title: 'Farm Assist',
-    description:
-      'Offline-first agricultural platform for areas with unreliable internet. Farmers record inventory and sales offline, queue crop-disease images, and sync automatically when connectivity returns, backed by Go services and AI/weather integrations.',
+    bullets: [
+      'Offline-first agricultural platform pairing a Flutter app and React dashboard with Go backend services for areas with unreliable internet.',
+      'Built Go services for data synchronization, weather integration, background disease detection, AI assistance, and SMS notifications.',
+      'Let farmers record inventory and sales offline and queue crop-disease images that sync automatically once connectivity returns.',
+    ],
     tech: ['Go', 'PostgreSQL', 'Flutter', 'React', 'Weather API', 'SMS API'],
     links: {
       preview: 'https://farmassist-frontend.onrender.com',
@@ -25,21 +46,15 @@ const PROJECTS = [
     },
   },
   {
-    tag: 'AI-Powered Job Search Assistant',
-    title: 'SkillMatch',
-    description:
-      'AI-powered job search platform that helps users discover and manage job opportunities based on their skills, experience, resume, and career goals. Uses AI for personalized job recommendations and remembers user activity to improve future suggestions. Frontend built with React, Vite, and TypeScript, featuring a modern, responsive interface for user authentication, profile management, resume uploads, AI-powered chat, job discovery, personalized recommendations, saved jobs, and application tracking, communicating with a Go backend through REST APIs.',
-    tech: ['React', 'TypeScript', 'Vite', 'Go', 'CockroachDB', 'Amazon Bedrock', 'Amazon S3', 'JWT'],
-    links: {
-      repo: 'https://github.com/Ashomondi/Skill-match.git',
-    },
-  },
-  {
     tag: 'Hackathon',
     title: 'EcoRoute',
-    description:
-      'EcoRoute: Turning Waste Into a Resource. An end-to-end circular waste platform that tracks bin fill-levels live on an interactive map, with a Go-based route optimizer that cuts distance, fuel, and time on every run with no external dependencies. Residents report overflows and illegal dumping, which auto-escalate bins to critical with no admin needed. AI forecasts tomorrow\u2019s fill levels so trucks arrive before overflow \u2014 and if AI goes down, the dashboard never breaks. Real results: ~8 km saved per route and CO₂ avoided, computed from actual data.',
-    tech: ['Go', 'React', 'AI'],
+    bullets: [
+      'End-to-end circular waste platform combining a Go route optimizer with a React dashboard that tracks bin fill-levels live on an interactive map.',
+      'Shipped a dependency-free Go optimizer that cuts distance, fuel, and time on every collection run \u2014 roughly 8 km saved per route.',
+      'Enabled residents to report overflows and illegal dumping, auto-escalating affected bins to critical without admin intervention.',
+      'Used AI to forecast next-day fill levels so trucks arrive before overflow, while keeping the dashboard fully functional if the AI service goes down.',
+    ],
+    tech: ['Go', 'React', 'AI', 'IoT'],
     links: {
       repo: 'https://github.com/Ashomondi/EcoRoute.git',
     },
@@ -65,9 +80,16 @@ function ProjectCard({ project, direction }) {
       {/* Tag */}
       <span className="text-xs font-semibold text-jungle-400">{project.tag}</span>
       <h3 className="mt-2 font-display text-2xl font-bold">{project.title}</h3>
-      <p className="mt-4 flex-1 text-sm leading-relaxed text-gray-400">
-        {project.description}
-      </p>
+      <ul className="mt-4 flex-1 space-y-2 text-sm leading-relaxed text-gray-400">
+        {project.bullets.map((bullet) => (
+          <li key={bullet} className="flex gap-2">
+            <span className="mt-0.5 shrink-0 text-jungle-400" aria-hidden>
+              ▸
+            </span>
+            <span>{bullet}</span>
+          </li>
+        ))}
+      </ul>
 
       {/* Tech stack */}
       {project.tech.length > 0 && (
@@ -118,7 +140,7 @@ export default function Services() {
       <SectionHeading
         eyebrow="Portfolio"
         title="Featured projects"
-        subtitle="Real-world applications tackling localized power management and agricultural data challenges."
+        subtitle="Full-stack applications spanning Go services, React interfaces, payment integrations, offline-first syncing, and AI features."
       />
 
       <div className="mt-12 flex flex-col gap-6">
