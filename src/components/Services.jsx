@@ -26,7 +26,9 @@ const PROJECTS = [
       'Kept the build reproducible with Docker, so local and production environments stayed in sync.',
     ],
     tech: ['JavaScript', 'Python', 'HTML', 'CSS', 'Docker', 'Render'],
-    links: {},
+    links: {
+      preview: 'https://zone01.onrender.com/',
+    },
   },
   {
     tag: 'Local-first desktop app',
