@@ -18,6 +18,28 @@ const PROJECTS = [
     },
   },
   {
+    tag: 'Client website',
+    title: 'Zone01 Website',
+    bullets: [
+      'Deployed the Zone01 Kisumu client website through a containerized Docker pipeline to Render, shipping a live URL for client review.',
+      'Collaborated across a full-stack team to build the JavaScript, HTML, and CSS interface backed by Python services.',
+      'Kept the build reproducible with Docker, so local and production environments stayed in sync.',
+    ],
+    tech: ['JavaScript', 'Python', 'HTML', 'CSS', 'Docker', 'Render'],
+    links: {},
+  },
+  {
+    tag: 'Local-first desktop app',
+    title: 'ReplayLabb',
+    bullets: [
+      'Built a local-first desktop app in TypeScript that captures and replays network traffic to surface slow replies and error states.',
+      'Engineered a scenario builder that turns captured sessions into repeatable test cases, removing the need for live traffic during debugging.',
+      'Implemented encrypted local storage so captured traffic and drafted scenarios stay on-device.',
+    ],
+    tech: ['TypeScript', 'CSS', 'Desktop App', 'Local-First Storage'],
+    links: {},
+  },
+  {
     tag: 'AI-Powered Job Search Assistant',
     title: 'SkillMatch',
     bullets: [
@@ -29,20 +51,6 @@ const PROJECTS = [
     tech: ['React', 'TypeScript', 'Vite', 'Go', 'CockroachDB', 'Amazon Bedrock', 'Amazon S3', 'JWT'],
     links: {
       repo: 'https://github.com/Ashomondi/Skill-match.git',
-    },
-  },
-  {
-    tag: 'Offline-first agritech',
-    title: 'Farm Assist',
-    bullets: [
-      'Architected an offline-first agricultural platform, pairing a Flutter app and React dashboard with Go backend services for low-connectivity environments.',
-      'Engineered Go sync services with background job processing for crop-disease detection, weather integration, and queued SMS notifications.',
-      'Designed offline data synchronization so farmers record inventory and sales without signal, auto-reconciling to PostgreSQL once connectivity returns.',
-    ],
-    tech: ['Go', 'PostgreSQL', 'Flutter', 'React', 'Background Jobs', 'Weather API', 'SMS API'],
-    links: {
-      preview: 'https://farmassist-frontend.onrender.com',
-      repo: 'https://github.com/ejao-000/FarmAssist',
     },
   },
   {
@@ -60,26 +68,18 @@ const PROJECTS = [
     },
   },
   {
-    tag: 'Local-first desktop app',
-    title: 'ReplayLabb',
+    tag: 'Offline-first agritech',
+    title: 'Farm Assist',
     bullets: [
-      'Built a local-first desktop app in TypeScript that captures and replays network traffic to surface slow replies and error states.',
-      'Engineered a scenario builder that turns captured sessions into repeatable test cases, removing the need for live traffic during debugging.',
-      'Implemented encrypted local storage so captured traffic and drafted scenarios stay on-device.',
+      'Architected an offline-first agricultural platform, pairing a Flutter app and React dashboard with Go backend services for low-connectivity environments.',
+      'Engineered Go sync services with background job processing for crop-disease detection, weather integration, and queued SMS notifications.',
+      'Designed offline data synchronization so farmers record inventory and sales without signal, auto-reconciling to PostgreSQL once connectivity returns.',
     ],
-    tech: ['TypeScript', 'CSS', 'Desktop App', 'Local-First Storage'],
-    links: {},
-  },
-  {
-    tag: 'Client website',
-    title: 'Zone01 Website',
-    bullets: [
-      'Deployed the Zone01 Kisumu client website through a containerized Docker pipeline to Render, shipping a live URL for client review.',
-      'Collaborated across a full-stack team to build the JavaScript, HTML, and CSS interface backed by Python services.',
-      'Kept the build reproducible with Docker, so local and production environments stayed in sync.',
-    ],
-    tech: ['JavaScript', 'Python', 'HTML', 'CSS', 'Docker', 'Render'],
-    links: {},
+    tech: ['Go', 'PostgreSQL', 'Flutter', 'React', 'Background Jobs', 'Weather API', 'SMS API'],
+    links: {
+      preview: 'https://farmassist-frontend.onrender.com',
+      repo: 'https://github.com/ejao-000/FarmAssist',
+    },
   },
 ];
 
