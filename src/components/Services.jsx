@@ -6,10 +6,10 @@ const PROJECTS = [
     tag: 'Live production app',
     title: 'Powersmart-Kenya',
     bullets: [
-      'Full-stack prepaid electricity platform pairing a Go/Gin + PostgreSQL backend with a React + Tailwind frontend for real-time kWh balance, usage trends, and depletion forecasts.',
-      'Designed REST APIs and a transactional PostgreSQL schema for instant token vending via M-Pesa, Airtel Money, and bank transfers, with end-to-end transaction tracking.',
-      'Built role-based portals and an admin console for Tenants, Landlords, and Admins, wiring frontend state to backend APIs.',
-      'Secured the stack end-to-end with bcrypt password hashing, JWT auth, rate limiting, and input validation.',
+      'Architected a full-stack prepaid electricity platform on a Go/Gin + PostgreSQL backend and React + Tailwind frontend, streaming real-time kWh balance, usage trends, and depletion forecasts.',
+      'Engineered a transactional PostgreSQL schema and REST API for instant token vending across M-Pesa, Airtel Money, and bank transfers, keeping every payment auditable end-to-end.',
+      'Implemented role-based portals and an admin console for Tenants, Landlords, and Admins, wiring React state directly to backend APIs.',
+      'Hardened the API with bcrypt password hashing, JWT auth, request rate limiting, and input validation.',
     ],
     tech: ['Go', 'Gin', 'PostgreSQL', 'React', 'Tailwind', 'JWT', 'M-Pesa', 'Docker'],
     links: {
@@ -21,10 +21,10 @@ const PROJECTS = [
     tag: 'AI-Powered Job Search Assistant',
     title: 'SkillMatch',
     bullets: [
-      'AI-powered job search platform connecting a React, TypeScript, and Vite frontend to a Go backend through REST APIs, giving users a single dashboard for their entire job-search journey.',
+      'Engineered an AI job-search platform connecting a React, TypeScript, and Vite frontend to a Go REST API, unifying discovery, applications, and resume management in one dashboard.',
       'Integrated Amazon Bedrock for personalized recommendations and AI chat, Amazon S3 for resume storage, and CockroachDB for persistence.',
       'Built a responsive interface covering authentication, profile management, resume uploads, job discovery, saved jobs, and application tracking.',
-      'Implemented JWT-based authentication and consumed backend APIs for recommendations that adapt to user activity.',
+      'Implemented JWT authentication and consumed Go APIs to serve recommendations that adapt to user activity.',
     ],
     tech: ['React', 'TypeScript', 'Vite', 'Go', 'CockroachDB', 'Amazon Bedrock', 'Amazon S3', 'JWT'],
     links: {
@@ -32,14 +32,14 @@ const PROJECTS = [
     },
   },
   {
-    tag: 'Agricultural tech',
+    tag: 'Offline-first agritech',
     title: 'Farm Assist',
     bullets: [
-      'Offline-first agricultural platform pairing a Flutter app and React dashboard with Go backend services for areas with unreliable internet.',
-      'Built Go services for data synchronization, weather integration, background disease detection, AI assistance, and SMS notifications.',
-      'Let farmers record inventory and sales offline and queue crop-disease images that sync automatically once connectivity returns.',
+      'Architected an offline-first agricultural platform, pairing a Flutter app and React dashboard with Go backend services for low-connectivity environments.',
+      'Engineered Go sync services with background job processing for crop-disease detection, weather integration, and queued SMS notifications.',
+      'Designed offline data synchronization so farmers record inventory and sales without signal, auto-reconciling to PostgreSQL once connectivity returns.',
     ],
-    tech: ['Go', 'PostgreSQL', 'Flutter', 'React', 'Weather API', 'SMS API'],
+    tech: ['Go', 'PostgreSQL', 'Flutter', 'React', 'Background Jobs', 'Weather API', 'SMS API'],
     links: {
       preview: 'https://farmassist-frontend.onrender.com',
       repo: 'https://github.com/ejao-000/FarmAssist',
@@ -49,15 +49,37 @@ const PROJECTS = [
     tag: 'Hackathon',
     title: 'EcoRoute',
     bullets: [
-      'End-to-end circular waste platform combining a Go route optimizer with a React dashboard that tracks bin fill-levels live on an interactive map.',
-      'Shipped a dependency-free Go optimizer that cuts distance, fuel, and time on every collection run \u2014 roughly 8 km saved per route.',
+      'Engineered an end-to-end circular waste platform, combining a Go route optimizer with a React dashboard that tracks bin fill levels live on an interactive map.',
+      'Shipped a dependency-free Go optimizer that trims distance, fuel, and time on every collection run \u2014 roughly 8 km saved per route.',
       'Enabled residents to report overflows and illegal dumping, auto-escalating affected bins to critical without admin intervention.',
-      'Used AI to forecast next-day fill levels so trucks arrive before overflow, while keeping the dashboard fully functional if the AI service goes down.',
+      'Integrated AI forecasting for next-day fill levels so trucks arrive before overflow, degrading gracefully when the AI service is unavailable.',
     ],
-    tech: ['Go', 'React', 'AI', 'IoT'],
+    tech: ['Go', 'React', 'AI Forecasting', 'Route Optimization', 'IoT'],
     links: {
       repo: 'https://github.com/Ashomondi/EcoRoute.git',
     },
+  },
+  {
+    tag: 'Local-first desktop app',
+    title: 'ReplayLabb',
+    bullets: [
+      'Built a local-first desktop app in TypeScript that captures and replays network traffic to surface slow replies and error states.',
+      'Engineered a scenario builder that turns captured sessions into repeatable test cases, removing the need for live traffic during debugging.',
+      'Implemented encrypted local storage so captured traffic and drafted scenarios stay on-device.',
+    ],
+    tech: ['TypeScript', 'CSS', 'Desktop App', 'Local-First Storage'],
+    links: {},
+  },
+  {
+    tag: 'Client website',
+    title: 'Zone01 Website',
+    bullets: [
+      'Deployed the Zone01 Kisumu client website through a containerized Docker pipeline to Render, shipping a live URL for client review.',
+      'Collaborated across a full-stack team to build the JavaScript, HTML, and CSS interface backed by Python services.',
+      'Kept the build reproducible with Docker, so local and production environments stayed in sync.',
+    ],
+    tech: ['JavaScript', 'Python', 'HTML', 'CSS', 'Docker', 'Render'],
+    links: {},
   },
 ];
 
@@ -140,7 +162,7 @@ export default function Services() {
       <SectionHeading
         eyebrow="Portfolio"
         title="Featured projects"
-        subtitle="Full-stack applications spanning Go services, React interfaces, payment integrations, offline-first syncing, and AI features."
+        subtitle="Full-stack applications spanning Go services, React interfaces, payment integrations, offline-first syncing, local-first desktop tooling, and AI features."
       />
 
       <div className="mt-12 flex flex-col gap-6">
